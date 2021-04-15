@@ -1,8 +1,12 @@
 // Code that requires the DOM be loaded should not be run until the DOM is loaded
 document. addEventListener("DOMContentLoaded", function(){
 
-  // Find the example form, and handle its submit event
-  const exampleForm = document.querySelector('#example-form')
+  // Find the forms, and handle its submit event
+  const exampleForm = document.querySelector('#example-form');
+  const form1 = document.querySelector('#form1');
+  const form2 = document.querySelector('#form2');
+  const form3 = document.querySelector('#form3');
+  const form4 = document.querySelector('#form4');
 
   exampleForm.addEventListener('submit', function(event){
     // Prevent the form from trying to submit to a server
@@ -29,5 +33,76 @@ document. addEventListener("DOMContentLoaded", function(){
     // Clear the form field so the user can try again
     inputField.value = ''
   })
+
+  form1.addEventListener('submit', function(event){
+    // Prevent the form from trying to submit to a server
+    event.preventDefault()
+
+    // An array that we can transform based on user input
+    let data1 = ['apples', 'bananas', 'carrots', 'bread']
+
+    const inputField1 = document.querySelector('#form1 .input')
+    const userItem = inputField1.value
+
+
+    // If the user's input was a word, push it into the array and continue
+    if(isNaN(userItem)){
+      data1.push(userItem)
+
+      // Output the total to the page- no need to convert the numeric sum back to a string, HTML will just print the number as a string
+      document.querySelector('#form1 .output').innerHTML = data1
+    }
+
+    var eggs = data1.includes('eggs');
+    document.getElementById('eggs').innerHTML = eggs;
+
+    // Clear the form field so the user can try again
+    inputField1.value = ''
+  })
+
+  form2.addEventListener('submit', function(event){
+    // Prevent the form from trying to submit to a server
+    event.preventDefault()
+
+    // An array that we can transform based on user input
+    let numlist = [2 , 3 , 4 , 5 , 6]
+
+    const inputField2 = document.querySelector('#form2 .input')
+    const userItem2 = inputField2.value
+    const userNumber2 = parseInt(userItem2)
+
+    // If the user's input was a number, push it into the array and continue
+    if(!isNaN(userNumber2)){
+      let x = numlist.map(numlist => numlist * userNumber2);
+      document.querySelector('#form2Num').innerHTML = userNumber2;
+      document.querySelector('#form2 .output').innerHTML = x;
+    }
+
+    // Clear the form field so the user can try again
+    inputField2.value = ''
+  })
+
+  form3.addEventListener('submit', function(event){
+    // Prevent the form from trying to submit to a server
+    event.preventDefault()
+
+    // An array that we can transform based on user input
+    let numbers = [2 , 3 , 4 , 5 , 6]
+
+    const inputField2 = document.querySelector('#form2 .input')
+    const userItem2 = inputField2.value
+    const userNumber2 = parseInt(userItem2)
+
+    // If the user's input was a number, push it into the array and continue
+    if(!isNaN(userNumber2)){
+      let x = numlist.map(numlist => numlist * userNumber2);
+      document.querySelector('#form2Num').innerHTML = userNumber2;
+      document.querySelector('#form2 .output').innerHTML = x;
+    }
+
+    // Clear the form field so the user can try again
+    inputField2.value = ''
+  })
+
 
 })
