@@ -89,19 +89,39 @@ document. addEventListener("DOMContentLoaded", function(){
     // An array that we can transform based on user input
     let numbers = [2 , 3 , 4 , 5 , 6]
 
-    const inputField2 = document.querySelector('#form2 .input')
-    const userItem2 = inputField2.value
-    const userNumber2 = parseInt(userItem2)
+    const inputField3 = document.querySelector('#form3 .input')
+    const userItem3 = inputField3.value
+    const userNumber3 = parseInt(userItem3)
 
     // If the user's input was a number, push it into the array and continue
-    if(!isNaN(userNumber2)){
-      let x = numlist.map(numlist => numlist * userNumber2);
-      document.querySelector('#form2Num').innerHTML = userNumber2;
-      document.querySelector('#form2 .output').innerHTML = x;
+    if(!isNaN(userNumber3)){
+      let overFilter = numbers.filter(x => x > userNumber3);
+      document.querySelector('#form3 .output').innerHTML = `Here is the array for every number greater than ${userNumber3}: ${overFilter}`;
     }
 
     // Clear the form field so the user can try again
-    inputField2.value = ''
+    inputField3.value = ''
+  })
+
+  form4.addEventListener('submit', function(event){
+    // Prevent the form from trying to submit to a server
+    event.preventDefault()
+
+    // An array that we can transform based on user input
+    let numbers = [2 , 3 , 4 , 5 , 6]
+
+    const inputField4 = document.querySelector('#form3 .input')
+    const userItem4 = inputField3.value
+    const userNumber4 = parseInt(userItem3)
+
+    // If the user's input was a number, push it into the array and continue
+    if(!isNaN(userNumber4)){
+      let overFilter = numbers.filter(x => x > userNumber3);
+      document.querySelector('#form3 .output').innerHTML = `Here is the array for every number greater than ${userNumber3}: ${overFilter}`;
+    }
+
+    // Clear the form field so the user can try again
+    inputField3.value = ''
   })
 
 
