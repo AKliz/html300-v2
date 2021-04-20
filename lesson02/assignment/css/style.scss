@@ -18,43 +18,72 @@ body{
   h2{
     font-style: italic;
     font-weight: 300;
-    margin:1rem 0;
     }
   h3{
     font-weight: 900;
     font-size: 1.1em;
   }
-  .info div p{
+  p{
     font-size: 1.1em;
     font-weight:300;
-  }
-  .info div img, h3{
-    padding-right: 8px;
   }
 }
 
 //card
 .card{
-  padding: 2rem;
-  display:flex;
+  padding: 1rem;
   margin:1rem;
-  border: 2rem solid $darkgrey;
+  border: 1rem solid $darkgrey;
 }
-
-//First Column
-.name-photo{
-  margin-top:3rem;
-  img{
-    border-radius: 50%;
+@include media-query(tab){
+  .card{
+    padding: 2rem;
+    margin:1rem;
+    border: 2rem solid $darkgrey;
   }
 }
 
-// info section
+//First Column - photo and name
+.name-photo{
+  margin-top:2rem;
+  img{
+    border-radius: 50%;
+    min-width:180px;
+  }
+  h2{
+  margin:1rem 0;
+  }
+}
+@include media-query(tab){
+  .name-photo img{
+    width: 100%;
+  }
+}
+
+
+// 2nd column - info section
 .info{
   background-color: $lightgrey;
   padding: 2rem;
-  margin:2rem;
   div{
     display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+  }
+  div img, h3{
+    padding-right: 8px;
+  }
+  h3, p{
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+  }
+}
+
+@include media-query(tab){
+  .info{
+    margin:2rem;
+    div{
+      flex-wrap: nowrap;
+    }
   }
 }

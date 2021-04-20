@@ -8,13 +8,23 @@ html {
     box-sizing: inherit;
 }
 
+.card{
+  flex-wrap: wrap;
+}
 
 .col-xs-12{
   width: 100%;
 }
-.col-sm-4{
-  width: 33%;
-}
-.col-sm-8{
-  width: 66%;
+
+@include media-query(tab){
+  .card{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .col-sm-4{
+    width: 33%;
+  }
+  .col-sm-8{
+    width: 66%;
+  }
 }
