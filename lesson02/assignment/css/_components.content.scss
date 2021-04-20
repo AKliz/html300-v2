@@ -8,10 +8,13 @@ html {
     box-sizing: inherit;
 }
 
-.main {
-    padding: 2rem;
-}
 
-h1 {
-    color: $red;  
+.col-xs-12{
+  width: 100%;
+}
+.col-sm-4{
+  width: 33%;
+}
+.col-sm-8{
+  width: 66%;
 }
