@@ -8,26 +8,49 @@
 ///topography
 body{
   color: $fontcolor;
-  section.name-photo{
-    text-align: center;
+}
+
+h1{
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 300;
   }
-  h1{
-    font-size: 2em;
-    font-weight: bold;
-  }
-  h2{
-    font-style: italic;
-    font-weight: 300;
-    }
-  h3{
-    font-weight: 900;
-    font-size: 1.1em;
-  }
-  p{
-    font-size: 1.1em;
-    font-weight:300;
+
+h3{
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+p{
+  font-size: 0.75rem;
+  font-weight:300;
+}
+
+a{
+  font-weight: 500;
+  color: $linkcolor;
+  &:hover{
+    color:$hue-color;
   }
 }
+
+@include media-query(sm){
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 1.5rem
+  }
+  h3, p{
+    font-size: 1.1rem;
+  }
+}
+
 
 //card
 .card{
@@ -35,6 +58,7 @@ body{
   margin:1rem;
   border: 1rem solid $darkgrey;
 }
+
 @include media-query(tab){
   .card{
     padding: 2rem;
@@ -46,17 +70,32 @@ body{
 //First Column - photo and name
 .name-photo{
   margin-top:2rem;
+  text-align: center;
   img{
     border-radius: 50%;
     min-width:180px;
+    max-width: 320px;
+  }
+  h1{
+    margin:1rem 0 0 0;
   }
   h2{
-  margin:1rem 0;
+  margin:0.5rem 0 1rem;
   }
 }
+
 @include media-query(tab){
-  .name-photo img{
+  .name-photo{
+    margin:2rem;
+    img{
     width: 100%;
+    }
+    h1{
+    margin:1rem 0;
+    }
+    h2{
+    margin:1rem 0 0 0;
+    }
   }
 }
 
@@ -64,14 +103,14 @@ body{
 // 2nd column - info section
 .info{
   background-color: $lightgrey;
-  padding: 2rem;
+  padding: 1rem;
   div{
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 1rem;
   }
   div img, h3{
-    padding-right: 8px;
+    padding-right: 0.5rem;
   }
   h3, p{
     margin-top:0.5rem;
@@ -79,9 +118,12 @@ body{
   }
 }
 
-@include media-query(tab){
+@include media-query(sm){
   .info{
     margin:2rem;
+    padding:3rem;
+    display: flex;
+    align-items:center;
     div{
       flex-wrap: nowrap;
     }

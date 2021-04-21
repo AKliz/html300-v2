@@ -9,6 +9,7 @@ html {
 }
 
 .card{
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -18,7 +19,6 @@ html {
 
 @include media-query(tab){
   .card{
-    display: flex;
     flex-wrap: nowrap;
   }
   .col-sm-4{
@@ -26,5 +26,11 @@ html {
   }
   .col-sm-8{
     width: 66%;
+  }
+}
+
+@include media-query(xl){
+  .col-lg-6{
+    width: 50%;
   }
 }
