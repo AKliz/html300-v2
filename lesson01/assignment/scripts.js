@@ -103,7 +103,6 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField3.value = ''
   })
 
-
   // An array that we can transform based on user input
   let age = [16, 19, 20, 56, 21, 56]
   document.querySelector('.agelist').innerHTML = `${fruit}`;
