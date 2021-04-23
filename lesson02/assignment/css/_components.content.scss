@@ -8,10 +8,29 @@ html {
     box-sizing: inherit;
 }
 
-.main {
-    padding: 2rem;
+.card{
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h1 {
-    color: $red;  
+.col-xs-12{
+  width: 100%;
+}
+
+@include media-query(tab){
+  .card{
+    flex-wrap: nowrap;
+  }
+  .col-sm-4{
+    width: 33%;
+  }
+  .col-sm-8{
+    width: 66%;
+  }
+}
+
+@include media-query(xl){
+  .col-lg-6{
+    width: 50%;
+  }
 }

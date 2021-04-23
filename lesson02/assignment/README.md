@@ -6,7 +6,7 @@
 ### To get started:
 -	In your forked repo, create a new branch off of master called 'lesson-02' or similar
 -   Navigate to the root folder of this assignment within terminal `lesson02/assignment/`
--   Run `npm install`
+-   Run `npm install gulp sass`
 -   Run `npx gulp`
   -   Expected output from gulp is information about localhost addresses, and a browser window opening to http://localhost:3000
 -   Leave gulp running. As you work with the files, browsersync will watch your scss and HTML files and reload the page in the browser on changes.

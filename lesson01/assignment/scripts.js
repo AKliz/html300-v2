@@ -103,25 +103,25 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField3.value = ''
   })
 
+  // An array that we can transform based on user input
+  let age = [16, 19, 20, 56, 21, 56]
+  document.querySelector('.agelist').innerHTML = `${fruit}`;
   form4.addEventListener('submit', function(event){
     // Prevent the form from trying to submit to a server
     event.preventDefault()
 
-    // An array that we can transform based on user input
-    let numbers = [2 , 3 , 4 , 5 , 6]
-
-    const inputField4 = document.querySelector('#form3 .input')
-    const userItem4 = inputField3.value
-    const userNumber4 = parseInt(userItem3)
+    const inputField4 = document.querySelector('#form4 .input')
+    const userItem4 = inputField4.value
+    const userNumber4 = parseInt(userItem4)
 
     // If the user's input was a number, push it into the array and continue
     if(!isNaN(userNumber4)){
-      let overFilter = numbers.filter(x => x > userNumber3);
-      document.querySelector('#form3 .output').innerHTML = `Here is the array for every number greater than ${userNumber3}: ${overFilter}`;
+      let shortName = age.every(n => n.length < userNumber4);
+      document.querySelector('#form4 .output').innerHTML = `${shortName}: All ages are less than ${userNumber4}.`;
     }
 
     // Clear the form field so the user can try again
-    inputField3.value = ''
+    inputField4.value = ''
   })
 
 
