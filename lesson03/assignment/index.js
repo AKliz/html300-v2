@@ -1,4 +1,5 @@
-[
+// profiles is an identifier for the array of objects that needs to be added
+const profiles = [
   {
     "name": "Paolo Maldini",
     "jobTitle": "Front End Developer",
@@ -52,3 +53,94 @@
     ]
   }
  ]
+
+
+
+ // Code that requires the DOM be loaded should not be run until the DOM is loaded
+ document.addEventListener("DOMContentLoaded", function(){
+
+
+   //map will loop over each object in the array with a method
+   //end result - new card for each profile (which is an object in the array)
+
+  let cardsHTML = profiles.map(function(x){
+
+    // turn the codeLanguages array into a string with a space between elements
+     let language = x.codeLanguages;
+     let languagesString = language.join(", ")
+
+    function dosomething(i){
+        console.log(language)
+        for (let i = 0; i = language.length; i++){
+          let list = `<li>`
+          list += `${language[i]}`
+          list +=`</li>`
+          console.log(list)
+        }
+
+    };
+
+
+
+    // language.forEach(function(c){
+    //
+    //   //print out key and value
+    //   for(const key in c){
+    //     language += `<li>${x[key]}</li>`;
+    //     console.log(language)
+    //   }
+    // })
+
+
+
+
+    //creating HTML inserting each property of the object
+    let cards = `
+    <section class="card">
+      <div class="col-lg-6 col-sm-4 col-xs-12 name-photo">
+        <img src="./img/headshot.jpg" alt="Paolo Maldini, the dog, Headshot" width="100%">
+        <h1>${x.name}</h1>
+        <h2>${x.jobTitle}</h2>
+      </div>
+      <article class="col-lg-6 col-sm-8 col-xs-12 info">
+        <div>
+          <h3>Company:</h3>
+          <p>${x.company}</p>
+        </div>
+        <div>
+          <h3>Experience:</h3>
+          <p>${x.experience}</p>
+        </div>
+        <div>
+          <h3>School:</h3>
+          <p>${x.school}</p>
+        </div>
+        <div>
+          <h3>Major:</h3>
+          <p>${x.major}</p>
+        </div>
+        <div>
+          <h3>Email:</h3>
+          <p><a href="mailto:${x.email}" target="_blank">${x.email}</a></p>
+        </div>
+
+        <div>
+          <h3>Coding Languages:</h3>
+          <p><ul>${languagesString}</ul></p>
+        </div>
+        <div>
+          <img src="./img/linkedin.svg" alt="Linkedin Blue and White Icon">
+          <p><a href="mailto:${x.linkedInUrl}" target="_blank">${x.name} Linkedin Profile</a></p>
+        </div>
+      </article>
+    </section>
+    `;
+    return cards;
+
+
+  });
+  //Adding the HTML above to the index.html where the class .cards is located.
+  document.querySelector('.profile-cards').innerHTML = cardsHTML
+
+
+})
