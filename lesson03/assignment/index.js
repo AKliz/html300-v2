@@ -67,18 +67,19 @@ const profiles = [
 
     // turn the codeLanguages array into a string with a space between elements
      let language = x.codeLanguages;
+     console.log(language)
      let languagesString = language.join(", ")
 
-    function dosomething(i){
-        console.log(language)
-        for (let i = 0; i = language.length; i++){
-          let list = `<li>`
-          list += `${language[i]}`
-          list +=`</li>`
-          console.log(list)
-        }
+     /// playing with trying to get the languages to view as an unordered html list
 
-    };
+     let listLanguage = language.map(function(i){
+        let list = `<li>`
+         list += `${i}`
+         list +=`</li>`
+         console.log(list)
+         return
+     });
+
 
 
 
