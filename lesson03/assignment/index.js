@@ -65,38 +65,8 @@ const profiles = [
 
   let cardsHTML = profiles.map(function(x){
 
-    // turn the codeLanguages array into a string with a space between elements
-     let language = x.codeLanguages;
-     console.log(language)
-     let languagesString = language.join(", ")
-
-     /// playing with trying to get the languages to view as an unordered html list
-
-     let listLanguage = language.map(function(i){
-        let list = `<li>`
-         list += `${i}`
-         list +=`</li>`
-         console.log(list)
-         return
-     });
-
-
-
-
-    // language.forEach(function(c){
-    //
-    //   //print out key and value
-    //   for(const key in c){
-    //     language += `<li>${x[key]}</li>`;
-    //     console.log(language)
-    //   }
-    // })
-
-
-
-
     //creating HTML inserting each property of the object
-    let cards = `
+    let card1 = `
     <section class="card">
       <div class="col-lg-6 col-sm-4 col-xs-12 name-photo">
         <img src="./img/headshot.jpg" alt="Paolo Maldini, the dog, Headshot" width="100%">
@@ -127,15 +97,33 @@ const profiles = [
 
         <div>
           <h3>Coding Languages:</h3>
-          <p><ul>${languagesString}</ul></p>
+          <p><ul>`;
+    // turn the codeLanguages array into a string with a space between elements
+     let language = x.codeLanguages;
+     console.log(language)
+     let languagesString = language.join(", ")
+
+     /// playing with trying to get the languages to view as an unordered html list
+
+    let listLanguage = language.map(function(i){
+       let list = `<li>`
+        list += `${i}`
+        list +=`</li>`
+        return list
+        console.log(list)
+    });
+
+
+    let card2 =
+          `${listLanguage}</ul></p>
         </div>
         <div>
           <img src="./img/linkedin.svg" alt="Linkedin Blue and White Icon">
           <p><a href="mailto:${x.linkedInUrl}" target="_blank">${x.name} Linkedin Profile</a></p>
         </div>
       </article>
-    </section>
-    `;
+    </section>`;
+    cards = card1 + card2
     return cards;
 
 
