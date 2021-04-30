@@ -64,9 +64,22 @@ const profiles = [
    //end result - new card for each profile (which is an object in the array)
 
   let cardsHTML = profiles.map(function(x){
+    // turn the codeLanguages array into a string with a space between elements
+     //let language = x.codeLanguages;
+     //console.log(language)
+     //let languagesString = language.join(", ")
 
+     /// playing with trying to get the languages to view as an unordered html list
+
+    let listLanguage = x.codeLanguages.map(function(i){
+       let list = `<li>`
+        list += `${i}`
+        list +=`</li>`
+        return list
+    });
+    listLanguage = listLanguage.join(" ")
     //creating HTML inserting each property of the object
-    let card1 = `
+    let cards = `
     <section class="card">
       <div class="col-lg-6 col-sm-4 col-xs-12 name-photo">
         <img src="./img/headshot.jpg" alt="Paolo Maldini, the dog, Headshot" width="100%">
@@ -97,27 +110,7 @@ const profiles = [
 
         <div>
           <h3>Coding Languages</h3>
-          <ul>`;
-    // turn the codeLanguages array into a string with a space between elements
-     let language = x.codeLanguages;
-     console.log(language)
-     let languagesString = language.join(", ")
-
-     /// playing with trying to get the languages to view as an unordered html list
-
-    let listLanguage = language.map(function(i){
-       let list = `<li>`
-        list += `${i}`
-        list +=`</li>`
-        console.log(list)
-        return list
-    });
-    listLanguage = listLanguage.join(" ")
-    console.log(listLanguage)
-
-
-    let card2 =
-          `${listLanguage}</ul>
+          <ul>${listLanguage}</ul>
         </div>
         <div>
           <img src="./img/linkedin.svg" alt="Linkedin Blue and White Icon">
@@ -125,7 +118,7 @@ const profiles = [
         </div>
       </article>
     </section>`;
-    cards = card1 + card2
+
     return cards;
 
 
