@@ -96,8 +96,8 @@ const profiles = [
         </div>
 
         <div>
-          <h3>Coding Languages:</h3>
-          <p><ul>`;
+          <h3>Coding Languages</h3>
+          <ul>`;
     // turn the codeLanguages array into a string with a space between elements
      let language = x.codeLanguages;
      console.log(language)
@@ -109,13 +109,15 @@ const profiles = [
        let list = `<li>`
         list += `${i}`
         list +=`</li>`
-        return list
         console.log(list)
+        return list
     });
+    listLanguage = listLanguage.join(" ")
+    console.log(listLanguage)
 
 
     let card2 =
-          `${listLanguage}</ul></p>
+          `${listLanguage}</ul>
         </div>
         <div>
           <img src="./img/linkedin.svg" alt="Linkedin Blue and White Icon">
