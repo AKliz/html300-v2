@@ -1,0 +1,50 @@
+Liz, Meghan & Kendall
+
+PROJECT 1: Nav bar in Fixed, semi transparent footer with custom creativecommons
+
+1. Will it take a little, lot, or absurd amount of work?
+Semi transparent will be easy with CSS
+Fixed - this would be tricker to to make responsive -
+Custom Icons - If provided icons ahead of time this wouldn't be too time consuming. If the developer has to find the actual icons this would be very time consuming.
+
+Overall - This would take a lot of time.
+
+2. Are there other options for similar result that would take less work?
+- use the same icon or pre-made icons (fontawesome)
+- use a sticky header at the top
+
+3. Is it a good development choice?
+- We don't feel that this is the best user experience. It's visual interesting but we believe overall it will be too distracting for the use (especially the transparent footer)
+
+4. What would be the first dev step you would try when building? Ex: “Add border radius to curve the edges” or “Use javascript to add a class”
+ - First we would secure the icons, then add the css to make the footer transparent and fixed to the bottom
+
+PROJECT 2: Navigation animation on Click
+1. Will it take a little, lot, or absurd amount of work?
+Absurd amount of work
+
+2. Are there other options for similar result that would take less work?
+- Animation of the links would happen at the same time
+- don't animate the button at the bottom
+- Cut down on the animation for the existing page and just concentrate on the animation of the hamburger menu.
+
+3. Is it a good development choice?
+For the amount of work, we don't feel like this is a good development choice.
+
+4. What would be the first dev step you would try when building?
+Try to convince the designer to tweak it!
+First thing would be getting the ease in and out to work properly when clicking the hamburger menu (for the menu itself and the entire page.) Use transition to slow things down.
+
+PROJECT 3: Navigation animation on Click
+1. Will it take a little, lot, or absurd amount of work?
+- Between a lot and absurd amount of work
+
+2. Are there other options for similar result that would take less work?
+- Possibly have each icon have a more similar animation on scroll.
+- make the icons a gif so it plays/animates on scroll
+
+3. Is it a good development choice?
+It's fun and not too overwhelming. The biggest question is do you have the time budgeted to do it.
+
+4. What would be the first dev step you would try when building?
+Build the navigation for each colors and get the gif "pause" stage to work.

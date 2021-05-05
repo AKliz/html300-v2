@@ -106,7 +106,7 @@ a{
   padding: 1rem;
   div{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-bottom: 1rem;
   }
   div img, h3{
@@ -122,10 +122,6 @@ a{
   .info{
     margin:2rem;
     padding:3rem;
-    display: flex;
     align-items:center;
-    div{
-      flex-wrap: nowrap;
-    }
   }
 }
