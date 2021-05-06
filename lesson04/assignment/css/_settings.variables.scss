@@ -1,0 +1,33 @@
+// Colors
+$gray: #f6f5f6;
+$white: #ffffff;
+$black: #000000;
+
+$pink: #ff0097;
+$red: #F1352B;
+$orange: #ff6600;
+$yellow: #ffb617;
+$robins: #01c1d6;
+$purple: #6e27c5;
+$blue: #150f96;
+
+//brand colors
+$green: #849340;
+$darkgreen: #6A633F;
+$lightgrey: #C5CBD2;
+$creme: #fbf9f4;
+$fontcolor: #454447;
+$fontshadow: #c4c1c1;
+$linkcolor: #eb5231;
+$desaturate-color: desaturate($linkcolor, 20%);
+$hue-color: adjust-hue($linkcolor, 10%);
+
+//fonts
+$header:'Bodoni Moda', serif;
+$body: 'Josefin Sans', sans-serif;
+$accent-font: 'Trade Gothic';
+$cursive-font: 'La Belle Aurore', cursive;
+
+//button transition
+$bgPositionOut: 400px 210px;
+$bgPositionIn: 100% 100%;
