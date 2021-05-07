@@ -4,3 +4,62 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+
+$teal: #00A3AD;
+$white: #FFFFFF;
+$grey: #707070;
+
+$font:Helvetica Neue;
+
+.main{
+    padding:0px;
+}
+
+.siteheader{
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $teal;
+  border: $grey 1px solid;
+  h1.siteheader__logo{
+    order:1;
+    a {
+      text-decoration: none;
+      color:$white;
+    }
+    font-size:1.5rem;
+    }
+  .siteheader__nav{
+    order:3;
+    margin:auto;
+    a{
+    color:$white;
+    padding: 0px 8px;
+    }
+  }
+  .siteheader__login{
+    a{
+      color:$white;
+      text-decoration: none;
+    }
+    font-size:1.5rem;
+    order:2;
+  }
+}
+
+@include media-query(infograph){
+  .siteheader{
+    .siteheader__nav{
+      order:2;
+      display: flex;
+      a{
+      padding: 0px 20px;
+      }
+    }
+    .siteheader__login{
+      order: 3;
+    }
+  }
+}
