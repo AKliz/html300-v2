@@ -183,30 +183,18 @@ main.content{
   display:grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
-  grid-template-areas: "content__mainsection" "content__sidebar" ;
+  grid-template-areas:  "content__sidebar" "content__mainsection" ;
   .content__sidebar{
     grid-area:content__sidebar;
-  }
-  .content__sidebar__title{
-    font-size: 2em;
-    font-family: $accent-font;
-  }
-  .content__mainsection__tab__menu{
-    padding-left: 0px;
-  }
-  .content__mainsection__tab__menu__item{
-    list-style-type: none;
-    padding: .5rem 0;
-    font-size: 1.5rem;
-    a{
-      &.active{
-        font-weight: 500;
-        color: $green;
-      }
+    padding:1rem;
+    .content__sidebar__title{
+      font-size: 2em;
+      font-family: $accent-font;
     }
   }
   .content__mainsection{
     grid-area:content__mainsection;
+    padding:1rem;
     /**Tabs**/
     .content__mainsection__tab{
       &.inactive{
@@ -215,7 +203,9 @@ main.content{
       &.active{
         display: block;
       }
-      .content__mainsection__tab__title{
+      h2.content__mainsection__tab__title{
+        font-size: 2rem;
+        text-align: center;
       }
       ul li{
         padding-top: 8px;
@@ -224,7 +214,20 @@ main.content{
         }
       }
     }
-
+  }
+  .content__mainsection__tab__menu{
+    padding-left: 0px;
+    .content__mainsection__tab__menu__item{
+      list-style-type: none;
+      padding: .5rem 0;
+      font-size: 1rem;
+      a{
+        &.active{
+          font-weight: 500;
+          color: $green;
+        }
+      }
+    }
   }
   .content__img-parallex{
     width: 100%;
@@ -250,6 +253,14 @@ main.content{
     }
     .content__mainsection{
       padding:2rem;
+      .content__mainsection__tab__title{
+        text-align: left;
+      }
+    }
+    .content__mainsection__tab__menu{
+      .content__mainsection__tab__menu__item{
+        font-size: 1.5rem;
+      }
     }
   }
 }
