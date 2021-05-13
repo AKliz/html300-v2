@@ -4,3 +4,292 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+///topography
+body{
+  color: $fontcolor;
+}
+
+h1{
+  font-size: 2.75rem;
+  font-weight: bold;
+  font-family: $header;
+}
+
+h2{
+  font-size: 3rem;
+  line-height: 3.2rem;
+  font-style: italic;
+  font-weight: 300;
+  font-family: $cursive-font;
+  margin: 1rem auto;
+  }
+
+h3{
+  font-size: 2rem;
+  line-height:2.25rem;
+  font-weight: 900;
+}
+
+p{
+  font-size: 1em;
+  font-weight:400;
+  letter-spacing: 0.075em;
+  font-family: $body;
+  line-height: 1.275em;
+}
+/**link animation source: https://cssanimation.rocks/animating-links/**/
+a{
+  font-weight: 500;
+  color: $linkcolor;
+  text-decoration: none;
+  position: relative;
+
+  &::after{
+    border-top: .15em solid $linkcolor;
+    content: "";
+    position: absolute;
+    right:100%;
+    bottom: 0;
+    left: 0;
+    transition: right .6s cubic-bezier(0,.5,0,1), border-color .4s ease-out;
+  }
+  &:hover{
+    color:$hue-color;
+    text-decoration: none;
+    &::after{
+      right:0;
+      border-color: $green;
+    }
+  }
+}
+
+@include media-query(sm){
+  h1{
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  h2{
+    font-size: 3.5rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+}
+
+//structure
+
+header{
+  display:grid;
+  margin: auto;
+  grid-template-rows: auto;
+  grid-template-areas:"topheader__sitetitle"
+                      "topheader__navigation"
+                      "topheader__torntop"
+                      "topheader__pagetitle";
+  .topheader__sitetitle{
+    grid-area:topheader__sitetitle;
+    font-size: 1.33rem;
+    text-align: center;
+  }
+  /**navigation**/
+  nav.topheader__navigation{
+    grid-area:topheader__navigation;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-inline-start:0px;
+    }
+    li.topheader__navigation_link{
+      list-style: none;
+      padding:.5rem;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+  .topheader__pagetitle{
+    grid-area:topheader__pagetitle;
+    margin-top:-3rem;
+    padding: 2rem;
+    background-image:url("../img/fireweed.jpg");
+    h1{
+      text-align:center;
+      color:$white;
+    }
+  }
+  .topheader__torntop{
+    background: url("../img/torn-top.webp") no-repeat top center;
+    grid-area: topheader__torntop;
+    background-size:cover;
+    width: 100%;
+    height: 62px;
+    z-index: 5;
+  }
+}
+
+@include media-query(tab){
+  header{
+    padding-top:2rem;
+    grid-template-rows: auto;
+    grid-template-columns: 25% 75%;
+    grid-template-areas:"topheader__sitetitle topheader__navigation"
+                        "topheader__torntop topheader__torntop"
+                        "topheader__pagetitle topheader__pagetitle";
+    .topheader__sitetitle{
+      font-size: 2.2rem;
+      line-height: 2.75rem;
+      text-align: center;
+      margin: 0 0 0 2rem;
+    }
+    /**navigation**/
+    nav.topheader__navigation{
+      margin-right: 2rem;
+      margin-left: 2rem;
+      line-height: 2.75rem;
+      padding:0px;
+      ul{
+        height: 100%;
+        align-content: center;
+        margin: 0;
+      }
+      li.topheader__navigation_link{
+        padding: 0 .5rem;
+        a{
+        }
+      }
+    }
+    .topheader__pagetitle{
+      h1{
+      text-align:left;
+      max-width: 1200px;
+      margin-left:auto;
+      margin-right:auto;
+      padding:2rem;
+      font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+
+/**main ***/
+main.content{
+  padding:1rem;
+  display:grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "content__mainsection" "content__sidebar" ;
+  .content__sidebar{
+    grid-area:content__sidebar;
+  }
+  .content__sidebar__title{
+    font-size: 2em;
+    font-family: $accent-font;
+  }
+  .content__mainsection__tab__menu{
+    padding-left: 0px;
+  }
+  .content__mainsection__tab__menu__item{
+    list-style-type: none;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    a{
+      &.active{
+        font-weight: 500;
+        color: $green;
+      }
+    }
+  }
+  .content__mainsection{
+    grid-area:content__mainsection;
+    /**Tabs**/
+    .content__mainsection__tab{
+      &.inactive{
+        display: none;
+      }
+      &.active{
+        display: block;
+      }
+      .content__mainsection__tab__title{
+      }
+      ul li{
+        padding-top: 8px;
+        a{
+          color: $black;
+        }
+      }
+    }
+
+  }
+  .content__img-parallex{
+    width: 100%;
+    background-image: url(../img/fireweed2.jpg);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+}
+
+
+
+@include media-query(tab){
+  main.content{
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "content__sidebar content__mainsection";
+    max-width: 1200px;
+    margin:auto;
+    .content__sidebar{
+      padding:2rem;
+    }
+    .content__mainsection{
+      padding:2rem;
+    }
+  }
+}
+
+
+/**footer**/
+.footer{
+  background-color: $green;
+  color:$white;
+  padding:1rem;
+  .footer__content{
+    display: grid;
+    grid-template: "footer__content__column1" "footer__content__column2";
+    grid-template-columns:1fr;
+    margin: auto;
+    .footer__content__column1{
+      grid-area: footer__content__column1;
+    }
+    .footer__content__column2{
+      grid-area:footer__content__column2;
+    }
+  }
+}
+
+@include media-query(tab){
+  .footer{
+    margin:auto;
+    padding: 2rem;
+    .footer__content{
+      grid-template: "footer__content__column1 footer__content__column2";
+      grid-template-columns:repeat(2, 1fr);
+      max-width: 1200px;
+      margin: auto;
+      .footer__content__column1{
+        padding:1rem 2rem;
+      }
+      .footer__content__column2{
+        padding:1rem 2rem;
+      }
+    }
+
+  }
+}
