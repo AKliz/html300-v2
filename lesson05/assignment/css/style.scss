@@ -253,8 +253,15 @@ main.content{
     }
     .content__mainsection{
       padding:2rem;
-      .content__mainsection__tab__title{
-        text-align: left;
+      .content__mainsection__tab{
+        .content__mainsection__tab__title{
+          text-align: left;
+        }
+        ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5rem 2rem;
+        }
       }
     }
     .content__mainsection__tab__menu{
