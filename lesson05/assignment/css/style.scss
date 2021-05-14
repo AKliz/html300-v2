@@ -187,9 +187,11 @@ main.content{
   .content__sidebar{
     grid-area:content__sidebar;
     padding:1rem;
+    background-color: $creme;
     .content__sidebar__title{
       font-size: 2em;
       font-family: $accent-font;
+      margin-bottom:0px;
     }
   }
   .content__mainsection{
