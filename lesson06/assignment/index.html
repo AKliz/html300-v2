@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="./form.js">
+
+  </script>
   <title>Assignment 06 - Bootstrap 4</title>
 </head>
 
@@ -44,43 +47,57 @@
       <div class="container p-3">
         <h1>Garden Gallery</h1>
       </div>
-    <div>
+      <div>
   </header>
   <main class="main container py-5">
     <section>
-      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" >
-        <div class="col-sm-6 col-lg-4 mb-4" >
-          <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/girdwood-gardens-bakeshop.jpeg" >
-            <div class="card-body">
-              <h5 class="card-title">The Bake Shop Summer Garden</h5>
-              <p class="card-text">Enjoy a delicious breakfast or lunch from the Bake Shop with friends in this beautiful garden located at the base of Alyeska Resort.</p>
+      <!-- Modal -->
+      <div class="modal fade" id="bakeshop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Bake Shop Map</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1936.7263512444!2d-149.11043504826532!3d60.96019158615405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x56c8980f81df20ff%3A0x9ea12a93eb79e2b0!2sThe%20Bake%20Shop!5e0!3m2!1sen!2sus!4v1621527141002!5m2!1sen!2sus"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
+
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card p-3">
             <figure class="p-3 mb-0">
               <blockquote class="blockquote">
                 <p>There are no gardening mistakes, only experiments.</p>
               </blockquote>
               <figcaption class="blockquote-footer mb-0 text-muted">
-                 <cite title="Source Title">Janet Kilbrun Phillips</cite>
+                <cite title="Source Title">Janet Kilbrun Phillips</cite>
               </figcaption>
             </figure>
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/girdwood-landscaping.jpeg" >
+            <img class="card-img-top" width="100%" height="auto" src="./img/girdwood-landscaping.jpeg">
             <div class="card-body">
               <h5 class="card-title">Alyeska Landscaping</h5>
               <p class="card-text">Alyeska Landscape Professionals is one of the local landscaping and maintence companies located in Girdwood. Stop paying for people to drive from Anchorage and hire local!</p>
             </div>
           </div>
         </div>
+
+
 
         <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card text-center">
@@ -93,36 +110,33 @@
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/forgetmenot.jpg" >
+            <img class="card-img-top" width="100%" height="auto" src="./img/forgetmenot.jpg">
             <div class="card-body">
               <h5 class="card-title">Alpine Forget-Me-Not</h5>
               <p class="card-text">Designated state flower of Alaska! You'll find this flower in moist mountainous areas on wooded slopes and grassy meadows. It's growing season is super short generating flowers between June and September.</p>
               <figcaption class="blockquote-footer mb-0 text-muted">
-               <cite title="Source Title"> <a href="https://www.fs.fed.us/wildflowers/plant-of-the-week/myosotis_asiatica.shtml" target="_blank">US Forest Service</a></cite>
+                <cite title="Source Title"> <a href="https://www.fs.fed.us/wildflowers/plant-of-the-week/myosotis_asiatica.shtml" target="_blank">US Forest Service</a></cite>
               </figcaption>
             </div>
           </div>
         </div>
 
-
         <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card bg-primary text-white text-center p-3">
-            <figure class="mb-0">
-              <blockquote class="blockquote">
-                <p>Spring is nature's way of saying, 'Let's party!</p>
-              </blockquote>
-              <figcaption class="blockquote-footer mb-0 text-white">
-                 <cite title="Source Title">Robin Williams</cite>
-              </figcaption>
-            </figure>
+          <div class="card">
+            <img class="card-img-top" width="100%" height="auto" src="./img/girdwood-gardens-bakeshop.jpeg">
+            <div class="card-body">
+              <h5 class="card-title">The Bake Shop Summer Garden</h5>
+              <p class="card-text">Enjoy a delicious breakfast or lunch from the Bake Shop with friends in this beautiful garden located at the base of Alyeska Resort.</p>
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#bakeshop">View Map</button>
+            </div>
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/sunny-girdwood-garden.jpg" >
+            <img class="card-img-top" width="100%" height="auto" src="./img/sunny-girdwood-garden.jpg">
             <div class="card-body">
               <h5 class="card-title">Is your property sunny or shaddy?</h5>
               <p class="card-text">Before planning out your garden in Girdwood, find out what aspect your garden faces. Depending on how much sun your property gets will dictate placement and type of flowers you should use.</p>
@@ -130,9 +144,11 @@
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+
+
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/rhubarb.jpg" >
+            <img class="card-img-top" width="100%" height="auto" src="./img/rhubarb.jpg">
             <div class="card-body">
               <h5 class="card-title">Rhubarb</h5>
               <p class="card-text">One of the first things to bloom in the summer in Girdwood is Rhubarb. This perinnial is super easy to grow and maintain year after year. </p>
@@ -140,9 +156,23 @@
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="https://c8.alamy.com/comp/D1MKX3/june-30-2012-girdwood-alaska-us-a-botanist-at-work-in-the-flower-garden-D1MKX3.jpg" alt="Jodie weeding the blooming flower garden at Alyeska Resort in Girdwood Alaska">
+            <img class="card-img-top" width="100%" height="auto" src="https://c8.alamy.com/comp/D1MKX3/june-30-2012-girdwood-alaska-us-a-botanist-at-work-in-the-flower-garden-D1MKX3.jpg"
+              alt="Jodie weeding the blooming flower garden at Alyeska Resort in Girdwood Alaska">
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img class="card-img-top" width="100%" height="auto" src="./img/fireweed-girdwood.jpg">
+            <div class="card-body">
+              <h5 class="card-title">Fireweed</h5>
+              <p class="card-text">Fireweed is a tall showy wildflower that grows from sea level to the subalpine zone. A colorful sight in many parts of the country, fireweed thrives in open meadows, along streams, roadsides, and forest edges.</p>
+              <figcaption class="blockquote-footer mb-0 text-muted">
+                <cite title="Source Title"> <a href="https://www.fs.fed.us/wildflowers/plant-of-the-week/chamerion_angustifolium.shtml" target="_blank">US Forest Service</a></cite>
+              </figcaption>
+            </div>
           </div>
         </div>
 
@@ -154,7 +184,7 @@
                 <p>In the spring, at the end of the day, you should smell like dirt.</p>
               </blockquote>
               <figcaption class="blockquote-footer mb-0 text-muted">
-               <cite title="Source Title">Margaret Atwood</cite>
+                <cite title="Source Title">Margaret Atwood</cite>
               </figcaption>
             </figure>
           </div>
@@ -170,9 +200,9 @@
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
+        <div class="col-sm-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/lupine.jpg" >
+            <img class="card-img-top" width="100%" height="auto" src="./img/lupine.jpg">
             <div class="card-body">
               <h5 class="card-title">Lupine</h5>
               <p class="card-text">When you see Lupine... you know it's spring!</p>
@@ -184,27 +214,30 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Girdwood Gardening Spring Chores</h5>
-              <p class="card-text">Sprinkle river sand (dark) or ashes over the snow covering your garden in April to accelerate it's removal. The dark color absorbs sun & heat. Careful with ashes though, make sure they match the type of ash with the type of plant.</p>
+              <p class="card-text">Sprinkle river sand (dark) or ashes over the snow covering your garden in April to accelerate it's removal. The dark color absorbs sun & heat. Careful with ashes though, make sure they match the type of ash with the
+                type of plant.</p>
               <figcaption class="blockquote-footer mb-0 text-muted">
-               <cite title="Source Title">Don Kunkel, Anchorage <a href="https://www.alaskamastergardeners.org/northern_gardening_tips.html#spring" target="_blank">Alaska Master Gardeners</a></cite>
+                <cite title="Source Title">Don Kunkel, Anchorage <a href="https://www.alaskamastergardeners.org/northern_gardening_tips.html#spring" target="_blank">Alaska Master Gardeners</a></cite>
               </figcaption>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-4 mb-4" >
-          <div class="card">
-            <img class="card-img-top" width="100%" height="auto" src="./img/fireweed-girdwood.jpg" >
-            <div class="card-body">
-              <h5 class="card-title">Fireweed</h5>
-              <p class="card-text">Fireweed is a tall showy wildflower that grows from sea level to the subalpine zone. A colorful sight in many parts of the country, fireweed thrives in open meadows, along streams, roadsides, and forest edges.</p>
-              <figcaption class="blockquote-footer mb-0 text-muted">
-               <cite title="Source Title"> <a href="https://www.fs.fed.us/wildflowers/plant-of-the-week/chamerion_angustifolium.shtml" target="_blank">US Forest Service</a></cite>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card bg-primary text-white text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>Spring is nature's way of saying, 'Let's party!</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-white">
+                <cite title="Source Title">Robin Williams</cite>
               </figcaption>
-            </div>
+            </figure>
           </div>
         </div>
-      </div>
+
+
+
     </section>
 
     <section class="row mx-7 bg-dark p-5 text-white mt-4">
@@ -212,27 +245,61 @@
         <h3>Subscribe to our seasonal newsletter</h3>
       </div>
       <div class="col col-sm-8">
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Email</span>
-          <input type="text" class="form-control" placeholder="info@email.com" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <form name="myForm" onsubmit="return validateForm()" method="post" class="needs-validation">
+          <div class="input-group mb-3">
+            <span class="input-group-text" for="fname">First Name</span>
+            <input type="text" aria-label="First name" class="form-control" id="fname" name="fname" required>
+            <div class="invalid-feedback">
+              At least First Name is Required.
+            </div>
+            <div class="valid-feedback">
+              Looks Good!
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" class="form-control" placeholder="info@email.com" aria-label="email" aria-describedby="email" id="email" required>
+            <div class="invalid-feedback">
+              Valid Email Required.
+            </div>
+            <div class="valid-feedback">
+              Looks Good!
+            </div>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="agree" id="checkshare" required>
+            <label class="form-check-label" for="checkshare">
+              Yes, I want to receive bi-annual updates related to Girdwood Gardening!
+            </label>
+            <div class="invalid-feedback">
+              <strong>This is Required.</strong>
+            </div>
+          </div>
+          <div class="pt-2">
+            <button type="submit" onclick="validateForm()" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="mt-3 alert alert-success alert-dismissible fade" role="alert">
+            <span>Your name has been added to our mailing list!</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+        </form>
       </div>
     </section>
-    </main>
-    <footer class="container-fluid ">
-      <section class="row bg-success bg-gradient p-5 text-white">
-            <div class="col col-sm-6">
-              <p>Copywrite Info</p>
-            </div>
-            <div class="col col-sm-6">
-              <p>Website Made By: Liz Cullivan</p>
-            </div>
-          </section>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+
+  </main>
+  <footer class="container-fluid ">
+    <section class="row bg-success bg-gradient p-5 text-white">
+      <div class="col col-sm-6">
+        <p>Copywrite Info</p>
+      </div>
+      <div class="col col-sm-6">
+        <p>Website Made By: Liz Cullivan</p>
+      </div>
+    </section>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 
 </body>
 
