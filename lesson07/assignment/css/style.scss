@@ -1,0 +1,501 @@
+// Import partials here
+@import 'base.normalize';
+@import 'settings.variables';
+@import 'settings.responsive';
+@import 'components.content';
+
+///topography
+body{
+  color: $fontcolor;
+}
+
+h1{
+  font-size: 2.75rem;
+  font-weight: bold;
+  font-family: $header;
+}
+
+h2{
+  font-size: 3rem;
+  line-height: 3.2rem;
+  font-style: italic;
+  font-weight: 300;
+  font-family: $cursive-font;
+  margin: 1rem auto;
+  }
+
+h3{
+  font-size: 2rem;
+  line-height:2.25rem;
+  font-weight: 900;
+}
+
+p{
+  font-size: 1em;
+  font-weight:400;
+  letter-spacing: 0.075em;
+  font-family: $body;
+  line-height: 1.275em;
+}
+/**link animation source: https://cssanimation.rocks/animating-links/**/
+a{
+  font-weight: 500;
+  color: $linkcolor;
+  text-decoration: none;
+  position: relative;
+
+  &::after{
+    border-top: .15em solid $linkcolor;
+    content: "";
+    position: absolute;
+    right:100%;
+    bottom: 0;
+    left: 0;
+    transition: right .6s cubic-bezier(0,.5,0,1), border-color .4s ease-out;
+  }
+  &:hover{
+    color:$hue-color;
+    text-decoration: none;
+    &::after{
+      right:0;
+      border-color: $green;
+    }
+  }
+}
+
+@include media-query(sm){
+  h1{
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  h2{
+    font-size: 3.5rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+}
+
+/**header - index css**/
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .header__title{
+    padding-left: 16px;
+    font-size:1.33rem;
+  }
+  .header__nav{
+    align-self:center;
+    padding-left:16px;
+    .header__nav__logo{
+
+    }
+    .header__nav__link{
+    padding:.5rem;
+    line-height: 1.5rem;
+    }
+  }
+  .header__torntop{
+    background: url(../img/torn-top.webp) no-repeat top center;
+    background-size:cover;
+    width: 100%;
+    height: 62px;
+    z-index: 5;
+  }
+}
+
+@include media-query(sm){
+  .header{
+    .header__title{
+      font-size: 2.5rem;
+    }
+    .header__nav{
+      padding-left:16px;
+      .header__nav__link{
+      padding: 0 .5rem;
+      }
+    }
+  }
+}
+
+/**container**/
+.container{
+  margin-top:-3rem;
+  .content{
+    max-width: 1200px;
+    margin:auto;
+    padding: 4rem 1rem;
+  }
+}
+
+/**hero section**/
+.hero{
+  background:url(../img/fireweed-girdwood.jpg) no-repeat center center;
+  background-size: cover;
+  min-height: 64vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-attachment: fixed;
+  background-position: center;
+  margin-top:-3rem;
+  .hero__title{
+    text-align: center;
+    color: $black;
+    text-shadow: 2px 2px $lightgrey;
+    align-self: center;
+    font-family: $cursive-font;
+    margin:2rem 0.5rem 0rem;
+    &:first-child{
+      color: $green;
+      font-family: $header;
+      font-style: normal;
+      font-weight: 900;
+      text-shadow: 2px 2px $fontshadow;
+      font-size:3.5rem;
+      line-height: 3.2rem;
+      margin-top:0 0 1rem;
+    }
+  }
+  .hero__button{
+    font-family: $body;
+    transition: all 0.275s;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    background-color: $white;
+    background-image: linear-gradient(to right, $green, $green);
+    background-position: $bgPositionOut;
+    background-repeat: no-repeat;
+    background-size: calc(100% - 5px) calc(100% - 5px);
+    font-size: 1em;
+    font-weight: bold;
+    color: $darkgreen;
+    position: relative;
+    display: inline-block;
+    border: 0 none;
+    z-index: 1;
+    width: 150px;
+    margin: 0.75em 0.33em;
+    margin-top: 3em;
+    padding: 0.4em 1.3em;
+    cursor: pointer;
+    align-self: center;
+    &:hover, &:focus {
+      outline: 0;
+      background-color: $lightgrey;
+      background-position: $bgPositionIn;
+      color:white;
+    }
+    &:active {
+      transform: scale(.9);
+    }
+    &:before,&:after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: $green;
+      z-index: -1;
+    }
+    &:before {
+      left: 5px;
+      height: 8px;
+    }
+    &:after {
+      top: 5px;
+      width: 8px;
+    }
+    span {
+      > * {
+        display: inline-block;
+        vertical-align: center;
+      }
+    }
+    span:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      border: 2px solid $darkgreen;
+      border-radius: 3px;
+    }
+    &.is-light {
+      min-width: auto;
+      padding: 0 0 0 0;
+      border-bottom: 0;
+      &:before, &:after {
+        display: none;
+      }
+      &:hover, &:focus {
+        background-position: 7px 18px;
+      }
+    }
+  }
+}
+
+/**content section**/
+
+.content{
+  .content__text{
+    font-size: 2em;
+  }
+  .content__img-parallex{
+    width: 100%;
+    background-image: url(../img/fireweed2.jpg);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  .content__img-leaf{
+    width: 25%;
+  }
+}
+
+
+
+//structure
+
+header{
+  display:grid;
+  margin: auto;
+  grid-template-rows: auto;
+  grid-template-areas:"topheader__sitetitle"
+                      "topheader__navigation"
+                      "topheader__torntop"
+                      "topheader__pagetitle";
+  .topheader__sitetitle{
+    grid-area:topheader__sitetitle;
+    font-size: 1.33rem;
+    text-align: center;
+    a {
+      color: $fontcolor;
+      font-weight: 700;
+    }
+  }
+  /**navigation**/
+  nav.topheader__navigation{
+    grid-area:topheader__navigation;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-inline-start:0px;
+    }
+    li.topheader__navigation_link{
+      list-style: none;
+      padding:.5rem;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+  .topheader__pagetitle{
+    grid-area:topheader__pagetitle;
+    margin-top:-3rem;
+    padding: 2rem;
+    background-image:url("../img/fireweed.jpg");
+    h1{
+      text-align:center;
+      color:$white;
+    }
+  }
+  .topheader__torntop{
+    background: url("../img/torn-top.webp") no-repeat top center;
+    grid-area: topheader__torntop;
+    background-size:cover;
+    width: 100%;
+    height: 62px;
+    z-index: 5;
+  }
+}
+
+@include media-query(tab){
+  header{
+    padding-top:2rem;
+    grid-template-rows: auto;
+    grid-template-columns: 25% 75%;
+    grid-template-areas:"topheader__sitetitle topheader__navigation"
+                        "topheader__torntop topheader__torntop"
+                        "topheader__pagetitle topheader__pagetitle";
+    .topheader__sitetitle{
+      font-size: 2.2rem;
+      line-height: 2.75rem;
+      text-align: center;
+      margin: 0 0 0 2rem;
+    }
+    /**navigation**/
+    nav.topheader__navigation{
+      margin-right: 2rem;
+      margin-left: 2rem;
+      line-height: 2.75rem;
+      padding:0px;
+      ul{
+        height: 100%;
+        align-content: center;
+        margin: 0;
+      }
+      li.topheader__navigation_link{
+        padding: 0 .5rem;
+        a{
+        }
+      }
+    }
+    .topheader__pagetitle{
+      h1{
+      text-align:left;
+      max-width: 1200px;
+      margin-left:auto;
+      margin-right:auto;
+      padding:2rem;
+      font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+
+/**main ***/
+main.content{
+  padding:1rem;
+  display:grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:  "content__sidebar" "content__mainsection" ;
+  .content__sidebar{
+    grid-area:content__sidebar;
+    padding:1rem;
+    background-color: $creme;
+    .content__sidebar__title{
+      font-size: 2em;
+      font-family: $accent-font;
+      margin-bottom:0px;
+    }
+  }
+  .content__mainsection{
+    grid-area:content__mainsection;
+    padding:1rem;
+    /**Tabs**/
+    .content__mainsection__tab{
+      &.inactive{
+        display: none;
+      }
+      &.active{
+        display: block;
+      }
+      h2.content__mainsection__tab__title{
+        font-size: 2rem;
+        text-align: center;
+      }
+      ul li{
+        padding-top: 8px;
+        a{
+          color: $black;
+        }
+      }
+    }
+  }
+  .content__mainsection__tab__menu{
+    padding-left: 0px;
+    .content__mainsection__tab__menu__item{
+      list-style-type: none;
+      padding: .5rem 0;
+      font-size: 1rem;
+      a{
+        &.active{
+          font-weight: 500;
+          color: $green;
+        }
+      }
+    }
+  }
+  .content__img-parallex{
+    width: 100%;
+    background-image: url(../img/fireweed-girdwood.jpg);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+}
+
+
+
+@include media-query(tab){
+  main.content{
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "content__sidebar content__mainsection";
+    max-width: 1200px;
+    margin:auto;
+    .content__sidebar{
+      padding:2rem;
+    }
+    .content__mainsection{
+      padding:2rem;
+      .content__mainsection__tab{
+        .content__mainsection__tab__title{
+          text-align: left;
+        }
+        ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5rem 2rem;
+        }
+      }
+    }
+    .content__mainsection__tab__menu{
+      .content__mainsection__tab__menu__item{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+
+/**footer**/
+.footer{
+  background-color: $green;
+  color:$white;
+  padding:1rem;
+  .footer__content{
+    display: grid;
+    grid-template: "footer__content__column1" "footer__content__column2";
+    grid-template-columns:1fr;
+    margin: auto;
+    .footer__content__column1{
+      grid-area: footer__content__column1;
+    }
+    .footer__content__column2{
+      grid-area:footer__content__column2;
+    }
+  }
+}
+
+@include media-query(tab){
+  .footer{
+    margin:auto;
+    padding: 2rem;
+    .footer__content{
+      grid-template: "footer__content__column1 footer__content__column2";
+      grid-template-columns:repeat(2, 1fr);
+      max-width: 1200px;
+      margin: auto;
+      .footer__content__column1{
+        padding:1rem 2rem;
+      }
+      .footer__content__column2{
+        padding:1rem 2rem;
+      }
+    }
+
+  }
+}
