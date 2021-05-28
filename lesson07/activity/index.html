@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Activity 07 - Vue</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <p v-bind:title="tooltip">
+      <span v-if="name === 'liz'">{{ generateGreeting() }} {{name}}</span>
+      <span v-else>Goodbye</span>
+    </p>
+    <p>Counter: {{ counter }}</p>
+    <ul>
+      <li v-for="num in favNumbers">{{num}}</li>
+    </ul>
+    <img v-if="imageShowing" v-bind:src="imgSrc" alt="" width="120">
+    <button v-if="!imageShowing" v-on:click="toggleImage">Show Image!</button>
+    <button v-if="imageShowing" v-on:click="toggleImage">Hide Image!</button>
+    <button v-on:click="plusOne">Add One!</button>
+    <button v-on:click="addMore(3)">Add More!</button>
+
+  </div>
+
+  <script type="text/javascript">
+    const CounterApp = {
+      data() {
+        return {
+          counter: 0,
+          name: "liz",
+          tooltip: "Your Name",
+          greeting: this.generateGreeting(),
+          favNumbers: [3, 6, 15],
+          imageShowing: false,
+          imgSrc: this.nextImage(),
+        }
+      },
+      methods: {
+        plusOne() {
+          this.counter += 1
+        },
+        generateGreeting() {
+          return "Hello there!"
+        },
+        addMore(amt) {
+          this.counter += parseInt(amt)
+        },
+        toggleImage() {
+          if (this.imageShowing) {
+            this.imageShowing = true
+          } else {
+            this.imageShowing = false
+          }
+        },
+        nextImage(){
+          let src =["https://picsum.photos/200/300","https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80", "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"]
+          let randomNum = Math.floor(Math.random()* src.length);
+          return src[randomNum];
+        }
+      }
+    }
+
+
+    Vue.createApp(CounterApp).mount('#app')
+  </script>
+
+</body>
+
+</html>
